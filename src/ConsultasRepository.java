@@ -18,6 +18,10 @@ public class ConsultasRepository{
         this.nArq = nArq;
     }
 
+    public String getNArq(){
+        return nArq;
+    }
+
     public void carregaDados(){
         String currDir = Paths.get("").toAbsolutePath().toString();
         // Monta o nome do arquivo
