@@ -13,9 +13,9 @@ public class ConsultasRepository{
     private List<RegistroDoTempo> registros;
     private String nArq;
 
-    public ConsultasRepository(String nArq){
+    public ConsultasRepository(){
         registros = new LinkedList<>();
-        this.nArq = nArq;
+        this.nArq = "poa_temps.txt";
     }
 
     public String getNArq(){

@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) {
-        ConsultasRepository crv = new ConsultasRepository("poa_temps.txt");
+        ConsultasRepository crv = new ConsultasRepository();
         Consultas consultas = new Consultas(crv);
         consultas.carregaDados();
         System.out.println("Dia em que mais choveu no ano de 1980: ");
