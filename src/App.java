@@ -1,6 +1,11 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        ConsultasRepository crv = new ConsultasRepository();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nome do arquivo : ");
+        String nArq = sc.nextLine();
+        ConsultasRepository crv = new ConsultasRepository(nArq.trim());
         Consultas consultas = new Consultas(crv);
         consultas.carregaDados();
         System.out.println("Dia em que mais choveu no ano de 1980: ");

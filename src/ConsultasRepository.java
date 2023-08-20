@@ -17,9 +17,9 @@ public class ConsultasRepository{
     private Predicate<RegistroDoTempo> consultaPadrao; // MUDANCA
     // CONDICAO DEFAULT
 
-    public ConsultasRepository(){
+    public ConsultasRepository(String nArq){
         registros = new LinkedList<>();
-        this.nArq = "poa_temps.txt";
+        this.nArq = nArq;
         consultaPadrao = registro -> registro.getPrecipitacao() > 0.0; // MUDANCA
     }
 
@@ -34,7 +34,7 @@ public class ConsultasRepository{
     public void carregaDados(){
         String currDir = Paths.get("").toAbsolutePath().toString();
         // Monta o nome do arquivo
-        String nomeCompleto = currDir+"/"+nArq;
+        String nomeCompleto = currDir+"/" + "src" +  "/" +nArq; // ALTERAÇÃO DO LOCAL DO ARQUIVO
         System.out.println(nomeCompleto);
         // Cria acesso ao "diretorio" da mídia (disco)
         Path path = Paths.get(nomeCompleto);
