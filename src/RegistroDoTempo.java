@@ -1,8 +1,6 @@
 //data precip maxima minima horas_insol temp_media um_relativa vel_vento
 public class RegistroDoTempo {
-    private int dia;
-    private int mes;
-    private int ano;
+    private Datas data;
     private double precipitacao;
     private double tempMaxima;
     private double tempMinima;
@@ -11,11 +9,9 @@ public class RegistroDoTempo {
     private double umidadeRelativaDoAr;
     private double velocidadeDoVento;
     
-    public RegistroDoTempo(int dia, int mes, int ano, double precipitacao, double tempMaxima, double tempMinima,
+    public RegistroDoTempo(Datas data, double precipitacao, double tempMaxima, double tempMinima,
             double horasInsolacao, double temperaturaMedia, double umidadeRelativaDoAr, double velocidadeDoVento) {
-        this.dia = dia;
-        this.mes = mes;
-        this.ano = ano;
+        this.data = data;
         this.precipitacao = precipitacao;
         this.tempMaxima = tempMaxima;
         this.tempMinima = tempMinima;
@@ -25,28 +21,36 @@ public class RegistroDoTempo {
         this.velocidadeDoVento = velocidadeDoVento;
     }
 
+    public Datas getData(){
+        return this.data;
+    }
+
+    public String getDataStr(){
+        return data.toString();
+    }
+
     public int getDia() {
-        return dia;
+        return data.getDia();
     }
 
     public void setDia(int dia) {
-        this.dia = dia;
+        data.setDia(dia);
     }
 
     public int getMes() {
-        return mes;
+        return data.getMes();
     }
 
     public void setMes(int mes) {
-        this.mes = mes;
+        data.setMes(mes);
     }
 
     public int getAno() {
-        return ano;
+        return data.getAno();
     }
 
     public void setAno(int ano) {
-        this.ano = ano;
+        data.setAno(ano);
     }
 
     public double getPrecipitacao() {
@@ -107,7 +111,7 @@ public class RegistroDoTempo {
 
     @Override
     public String toString() {
-        return "RegistroDoTempo [ano=" + ano + ", dia=" + dia + ", horasInsolacao=" + horasInsolacao + ", mes=" + mes
+        return "RegistroDoTempo [ano=" + data.getAno() + ", dia=" + data.getDia() + ", horasInsolacao=" + horasInsolacao + ", mes=" + data.getMes()
                 + ", precipitacao=" + precipitacao 
                 + ", temperatura Maxima=" + tempMaxima + ", temperatura Minima=" + tempMinima
                 + ", temperaturaMedia=" + temperaturaMedia + ", umidadeRelativaDoAr=" + umidadeRelativaDoAr

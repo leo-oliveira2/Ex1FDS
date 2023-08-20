@@ -8,5 +8,8 @@ public class App {
         System.out.println("Datas em que choveu mais de 90 milimetros");
         consultas.datasEmQueChouveuMaisDe(90)
             .forEach(System.out::println);
+        System.out.println("DIAS EM QUE");
+        consultas.diasEmQue()
+            .forEach(System.out::println);
     }
 }
